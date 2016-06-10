@@ -1,60 +1,51 @@
-var addEl = document.getElementById("add");
+var addEl = document.getElementById("add").addEventListener("click", adds)
 var subtractEl = document.getElementById("subtract");
 var multiplyEl = document.getElementById("multiply");
 var divideEl = document.getElementById("divide");
+
 var firstInput = document.getElementById("firstNumber");
 var secondInput = document.getElementById("secondNumber");
 
-function clickEvent(event) {
-  // console.log(event);
-}
+var firstInputNumber = firstInput.value;
+var secondInputNumber = secondInput.value;
 
-function num1() {
-  console.log("firstInput", firstInput);
-}
+var outputResult = document.getElementById("output");
 
-buttons.addEventListener("click", clickEvent)
-console.log("click", event);
+
 /*
   Create a function that multiplies two numbers
   passed in as arguments. Return the product.
  */
 
-function multiplies(first, second) {
-  return first * second;
-}
-var multiplication = multiplies();
-
+ function multiplies(a, b) {
+  return a * b;
+ }
 /*
   Create a function that adds two numbers
   passed in as arguments. Return the sum.
  */
 
-function adds(first, second) {
-  return first + second;
+function adds(a, b) {
+  return a + b;
 }
-var addition = adds();
-// console.log("adds", addition);
 
 /*
   Create a function that subtracts two numbers
   passed in as arguments. Return the difference.
  */
 
-function subtracts(first, second) {
-  return first - second;
+function subtracts(a, b) {
+  return a - b;
 }
-var subtraction = subtracts();
 
 /*
   Create a function that divides two numbers
   passed in as arguments. Return the quotient.
  */
 
-function divides(first, second) {
-  return first / second;
+function divides(a, b) {
+   return a / b;
 }
-var division = divides();
 
 /*
   Create a function that accepts three arguments.
@@ -65,15 +56,6 @@ var division = divides();
   Return the value of the operation.
  */
 
-function threeArguments(first, operation, second) {
-  return operation
+function threeArguments(func, one, two) {
+  return func(one, two);
 }
-  var three = threeArguments(12, addition, 3);
-  console.log("three", three);
-
-
-
-
-
-
-
