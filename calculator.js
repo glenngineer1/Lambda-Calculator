@@ -1,61 +1,59 @@
-var addEl = document.getElementById("add").addEventListener("click", adds)
-var subtractEl = document.getElementById("subtract");
-var multiplyEl = document.getElementById("multiply");
-var divideEl = document.getElementById("divide");
+var addEl = document.getElementById("add").addEventListener("click", add);
+var subtractEl = document.getElementById("subtract").addEventListener("click", subtract);
+var multiplyEl = document.getElementById("multiply").addEventListener("click", mutliply);
+var divideEl = document.getElementById("divide").addEventListener("click", divide);
 
 var firstInput = document.getElementById("firstNumber");
 var secondInput = document.getElementById("secondNumber");
 
-var firstInputNumber = firstInput.value;
-var secondInputNumber = secondInput.value;
-
 var outputResult = document.getElementById("output");
 
-
-/*
-  Create a function that multiplies two numbers
-  passed in as arguments. Return the product.
- */
-
- function multiplies(a, b) {
-  return a * b;
- }
-/*
-  Create a function that adds two numbers
-  passed in as arguments. Return the sum.
- */
-
-function adds(a, b) {
-  return a + b;
+function add() {
+  firstInputNumber = firstInput.value;
+  secondInputNumber = secondInput.value;
+  var addResult = calculation(adds, firstInputNumber, secondInputNumber);
+  outputResult.innerHTML += `<div>${addResult}</div>`;
 }
 
-/*
-  Create a function that subtracts two numbers
-  passed in as arguments. Return the difference.
- */
+function subtract() {
+  firstInputNumber = firstInput.value;
+  secondInputNumber = secondInput.value;
+  var subtractResult = calculation(subtracts, firstInputNumber, secondInputNumber);
+  outputResult.innerHTML += `<div>${subtractResult}</div>`;
+}
 
+function mutliply() {
+  firstInputNumber = firstInput.value;
+  secondInputNumber = secondInput.value;
+  var multiplyResult = calculation(multiplies, firstInputNumber, secondInputNumber);
+  outputResult.innerHTML += `<div>${multiplyResult}</div>`;
+}
+
+function divide() {
+  firstInputNumber = firstInput.value;
+  secondInputNumber = secondInput.value;
+  var divideResult = calculation(divides, firstInputNumber, secondInputNumber);
+  outputResult.innerHTML += `<div>${divideResult}</div>`;
+}
+
+
+function adds(a, b) {
+  return parseInt(a) + parseInt(b);
+}
 function subtracts(a, b) {
   return a - b;
 }
 
-/*
-  Create a function that divides two numbers
-  passed in as arguments. Return the quotient.
- */
+function multiplies(a, b) {
+  return a * b;
+ }
 
 function divides(a, b) {
    return a / b;
 }
 
-/*
-  Create a function that accepts three arguments.
-    1. First number
-    2. Second number
-    3. A function that performs an operation on them
-
-  Return the value of the operation.
- */
-
-function threeArguments(func, one, two) {
-  return func(one, two);
+function calculation(operation, one, two) {
+  return operation(one, two);
 }
+
+
